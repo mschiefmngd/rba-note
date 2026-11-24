@@ -56,7 +56,7 @@ html:has(#lock){background:#F2F4F6}
 (function(){
   var K = "rba-note-pw", P = null;
   var b64 = function(s){ return Uint8Array.from(atob(s), function(c){ return c.charCodeAt(0); }); };
-  function get(){ return P ? Promise.resolve(P) : fetch("payload.json?v=8", {cache:"no-cache"}).then(function(r){ return r.json(); }).then(function(j){ P = j; return j; }); }
+  function get(){ return P ? Promise.resolve(P) : fetch("payload.json?v=9", {cache:"no-cache"}).then(function(r){ return r.json(); }).then(function(j){ P = j; return j; }); }
   function open(pw){
     return get().then(function(j){
       var enc = new TextEncoder();
