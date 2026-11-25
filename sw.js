@@ -1,6 +1,6 @@
 /* 오프라인 캐시: 페이지와 내용 파일은 최신을 먼저 받고, 안 되면 저장본을 보여줘요 */
-const CACHE = "rba-note-14";
-const CORE = ["./", "./index.html", "./payload.json?v=14", "./manifest.json", "./icons/icon-192.png", "./icons/icon-512.png"];
+const CACHE = "rba-note-15";
+const CORE = ["./", "./index.html", "./payload.json?v=15", "./manifest.json", "./icons/icon-192.png", "./icons/icon-512.png"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(CORE)).then(() => self.skipWaiting())); });
 self.addEventListener("activate", e => {
   e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim()));
